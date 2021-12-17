@@ -1,0 +1,178 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+     <h:outputStylesheet name="css/bootstrap.min.css"/>
+        <title>JSF JPA || Home</title>
+    </h:head>
+    
+
+    <h:body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Lsi_commerce</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.xhtml">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listClient.xhtml">Client</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="addProduct.xhtml">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listProduct.xhtml">Market</a>
+      </li>
+   
+    </ul>
+   
+  </div>
+</nav>
+    <div class="wrapper fadeInDown">
+
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+          <br />
+        <img src="https://raw.githubusercontent.com/younes-ettouil/Projet-E-commerce-site-web-C--ASP.net/master/img/ico2.png" Width="170px" Height="160px" runat="server" />
+          <h3>Log in!</h3>
+          <br />
+      </div>
+  
+
+  <div class="card-body">
+    
+    <h:form class="row g-3">
+ 
+  <div class="col-12">
+    <label for="inputAddress"  id="email"  class="form-label">E-mail:</label>
+    <h:inputText type="email"  value="#{ClientManagedBean.email}" class="form-control" id="inputAddress" placeholder="1234 Main St" />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2"  id="password"  class="form-label">Password</label>
+    <h:inputText type="text"  value="#{ClientManagedBean.password}" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
+  </div>
+ 
+
+
+  <div class="col-12">
+      <div class="col-sm-4">
+                <div class="col-sm-2"><h:commandButton value="Save" action="#{ClientManagedBean.ajouterClient(ClientManagedBean)}" styleClass="btn btn-success btnWidth" /></div>
+                <div class="col-sm-1" />
+            </div>
+  </div>
+  <div id="formFooter">
+       	<h:link value = "Nouveau Client" outcome = "addClient.xhtml" /></div>
+</h:form>
+    
+  </div>
+</div>
+        
+        
+      <!-- Remind Passowrd -->
+     
+  
+    </div>
+
+      
+    </h:body>
+     <style>
+
+body,.container {
+  background-color: #56baed;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+a {
+  color: #92badd;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* STRUCTURE */
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+#email{
+margin-left: -350px;
+}
+#password{
+margin-left: -335px;
+}
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+ 
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+#formFooter {
+  
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* OTHERS */
+*:focus {
+    outline: none;
+} 
+
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #39ace7;
+}
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+</style>
+    
+</html>

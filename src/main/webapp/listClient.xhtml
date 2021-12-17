@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+     <h:outputStylesheet name="css/bootstrap.min.css"/>
+    <title>JSF JPA || Clients</title>
+</h:head>
+<h:body >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Lsi_commerce</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.xhtml">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listClient.xhtml">Client</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="addProduct.xhtml">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listProduct.xhtml">Market</a>
+      </li>
+     
+ 
+    </ul>
+   
+  </div>
+</nav>
+<div class="container wrapper" >
+<div class="mt-5 h4 text-center" >
+	List Clients
+</div>
+<div class="mt-5">
+ <h:form id="schoolForm">
+        <h:dataTable id="schoolTable" binding="#{table}" value="#{ClientManagedBean.getAllClients()}" var="cl" styleClass="table table-striped table-bordered tableUpdated">
+            <h:column>
+                <f:facet name="header">#</f:facet>
+                <h:outputText value="#{cl.id}" />                
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nom</f:facet>
+                <h:outputText value="#{cl.nom}" />
+            </h:column>
+             <h:column>
+                <f:facet name="header">Prenom</f:facet>
+                <h:outputText value="#{cl.prenom}" />
+            </h:column>
+             <h:column>
+                <f:facet name="header">email</f:facet>
+                <h:outputText value="#{cl.email}" />
+            </h:column>
+                <h:column>
+                <f:facet name="header">numero Telephon</f:facet>
+                <h:outputText value="#{cl.nTele}" />
+            </h:column>
+            <h:column>
+					<f:facet name="header">Update</f:facet>
+					<h:commandButton styleClass="btn btn-primary" action="#{ClientManagedBean.ajouterClient(ClientManagedBean)}"
+						value="Update" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Delete</f:facet>
+					<h:commandButton styleClass="btn btn-danger" action="#{ClientManagedBean.ajouterClient(ClientManagedBean)}"
+						value="Delete" />
+				</h:column>
+        </h:dataTable>
+        <center><h:commandButton action="addClient.xhtml?faces-redirect=true" value="Ajouter Client" styleClass="btn btn-success btnSpace" /></center>
+    </h:form>
+</div>
+    
+ </div>
+
+</h:body>
+<style>
+
+
+</style>
+ <!-- <style>
+body,.container {
+  background-color: #56baed;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+a {
+  color: #92badd;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+
+/* STRUCTURE */
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+ 
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+#formFooter {
+  
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* OTHERS */
+*:focus {
+    outline: none;
+} 
+
+
+</style>
+ -->
+</html>
